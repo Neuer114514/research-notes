@@ -175,6 +175,27 @@ window.LEARNING_DATA = {
   timeline: [
     {
       date: "2026-10-27",
+      title: "NumPy 笔记整理（第 4 天 · 数据基础）",
+      summary: "数组 reshape、转置、翻转、拼接、分割与索引切片，10/22—10/29 完成。",
+      tags: ["第 1 周", "NumPy"],
+      log: "notes/Numpy笔记.md",
+    },
+    {
+      date: "2026-10-21",
+      title: "Git 笔记整理（第 3 天 · 版本管理与笔记）",
+      summary: "身份配置、仓库创建、三区模型、撤销与回退、rm 与 git rm、分支与合并、stash、远程库，含实操截图。",
+      tags: ["第 1 周", "Git"],
+      log: "notes/Git笔记.md",
+    },
+    {
+      date: "2026-10-18",
+      title: "Python 笔记整理（第 2 天 · Python 基础）",
+      summary: "数据类型与随机数、字符串处理、容器、流程控制、函数与文件读写，含实操截图。",
+      tags: ["第 1 周", "Python"],
+      log: "notes/Python笔记.md",
+    },
+    {
+      date: "2026-10-27",
       title: "第 4 天 · 数据基础：NumPy / Pandas / Matplotlib",
       summary: "用鸢尾花数据集跑通「读取 → 清洗 → 分组统计 → 绘图」，产出含 3 张图表的 Notebook。",
       tags: ["第 1 周", "数据基础"],

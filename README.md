@@ -94,6 +94,16 @@
 - 论文笔记模板：[`papers/模板.md`](papers/模板.md)
 - 踩坑记录：[`faq.md`](faq.md)（第 1 周已记 6 条）
 
+### 专题笔记（这两周整理）
+
+| 笔记 | 对应天数 | 整理时间 | 内容 |
+|------|---------|---------|------|
+| [notes/Git笔记.md](notes/Git笔记.md) | 第 3 天 · 版本管理与笔记 | 2026-10-14 ~ 10-21 | 身份配置、仓库创建、add/commit 三区、撤销与回退、rm 与 git rm、分支与合并、stash、远程库 |
+| [notes/Python笔记.md](notes/Python笔记.md) | 第 2 天 · Python 基础 | 2026-10-14 ~ 10-21 | 数据类型与随机数、字符串处理、列表/字典、条件与循环、函数、文件读写 |
+| [notes/Numpy笔记.md](notes/Numpy笔记.md) | 第 4 天 · 数据基础 | 2026-10-22 ~ 10-29 | 数组 reshape、转置、翻转、拼接、分割、索引与切片 |
+
+> 三份笔记由 Word 原稿转换而来，截图保存在 `notes/img-*/media/`，GitHub 上可直接看图。
+
 ---
 
 ## 五、第 1 周检查点（周末自测）
@@ -164,6 +174,9 @@ git push
 │   ├── 2026-10-24.md ~ 2026-10-27.md
 ├── papers/                         # 论文阅读笔记（第 2 周起，指南 6.2 模板）
 │   └── 模板.md
+├── notes/                          # 专题笔记（Word 原稿转换，含截图）
+│   ├── Git笔记.md / Python笔记.md / Numpy笔记.md
+│   └── img-git/ img-numpy/ img-python/   # 笔记截图
 ├── code/                           # 练习代码
 │   ├── README.md
 │   └── week1/{text_stats.py, day04_iris_analysis.py}
