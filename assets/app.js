@@ -7,7 +7,8 @@
 
   var D = window.LEARNING_DATA || {};
   var profile = D.profile || {};
-  var modules = D.modules || [];
+  var modules = D.weeks || D.modules || [];
+  var plan = (D.plan || []).slice().sort(function (a, b) { return a.day - b.day; });
   var daily = (D.daily || []).slice().sort(function (a, b) {
     return a.date < b.date ? -1 : 1;
   });
@@ -59,7 +60,7 @@
     document.title = profile.title || "学习进程看板";
     set("brandTitle", profile.title || "学习进程看板");
     set("heroEyebrow", "Learning Progress");
-    set("heroTitle", (profile.name ? profile.name + " 的" : "") + "编程学习进程");
+    set("heroTitle", (profile.name ? profile.name + " 的" : "") + (profile.title || "学习进程"));
     set("heroSubtitle", profile.subtitle || "");
     set("heroMotto", profile.motto ? "「" + profile.motto + "」" : "");
 
@@ -69,7 +70,8 @@
       var left = daysBetween(new Date(), parseDate(profile.targetDate));
       meta.push(left >= 0 ? "距离目标还有 " + left + " 天" : "目标日期已过 " + -left + " 天");
     }
-    meta.push("共 " + modules.length + " 个学习模块");
+    var d = plan.filter(function (p) { return p.status === "done"; }).length;
+    meta.push("四周 28 天 · 已完成第 " + d + " 天");
     set("heroMeta", meta.map(function (t) { return '<span class="chip">' + t + "</span>"; }).join(""));
 
     if (profile.repoUrl) {
@@ -106,11 +108,12 @@
 
   /* ---------------- 统计卡片 ---------------- */
   function renderStats() {
+    var currentDay = plan.filter(function (p) { return p.status === "done"; }).length;
     var cards = [
-      { label: "累计学习时长", value: one(totalHours) + "<small> 小时</small>", ratio: Math.min(1, totalHours / 150) },
-      { label: "完成任务", value: doneTasks + "<small> / " + totalTasks + "</small>", ratio: percent / 100 },
-      { label: "连续打卡", value: streak + "<small> 天</small>", ratio: Math.min(1, streak / 30) },
-      { label: "近 7 天时长", value: one(last7) + "<small> 小时</small>", ratio: Math.min(1, last7 / 20) },
+      { label: "累计学习时长", value: one(totalHours) + "<small> 小时</small>", ratio: Math.min(1, totalHours / 90) },
+      { label: "已完成天数", value: doneTasks + "<small> / " + totalTasks + " 天</small>", ratio: percent / 100 },
+      { label: "连续打卡", value: streak + "<small> 天</small>", ratio: Math.min(1, streak / 28) },
+      { label: "当前进度", value: "第 " + (currentDay || 1) + "<small> / 28 天</small>", ratio: (currentDay || 0) / 28 },
     ];
     document.getElementById("stats").innerHTML = cards.map(function (c) {
       return '<div class="stat"><div class="label">' + c.label + '</div>' +
@@ -118,8 +121,8 @@
         '<div class="bar"><i style="width:' + (c.ratio * 100).toFixed(0) + '%"></i></div></div>';
     }).join("");
 
-    var extra = "活跃 " + activeDays + " 天 · 平均每天 " + (activeDays ? one(totalHours / activeDays) : 0) + " 小时";
-    set("modulesHint", "共 " + totalTasks + " 个任务，已完成 " + doneTasks + " 个（" + extra + "）");
+    var extra = "已学 " + activeDays + " 天 · 平均每天 " + (activeDays ? one(totalHours / activeDays) : 0) + " 小时";
+    set("modulesHint", "四周共 " + totalTasks + " 天，已完成 " + doneTasks + " 天（" + extra + "）");
   }
 
   /* ---------------- 模块进度 ---------------- */
@@ -223,6 +226,40 @@
       one(data.reduce(function (s, d) { return s + d.hours; }, 0) / data.length) + " 小时");
   }
 
+  /* ---------------- 四周任务清单 ---------------- */
+  function renderPlan() {
+    if (!plan.length) return;
+    var names = { done: "已完成", doing: "进行中", next: "下一步", todo: "未开始" };
+    var html = '<div class="plan-grid">';
+    modules.forEach(function (w) {
+      var items = plan.filter(function (p) { return p.week === +String(w.id).replace(/\D/g, ""); });
+      if (!items.length) return;
+      var finished = items.filter(function (p) { return p.status === "done"; }).length;
+      html += '<div class="plan-week">' +
+        '<div class="plan-week-head" style="border-color:' + w.color + '">' +
+        '<span class="plan-week-name">' + esc(w.name) + "</span>" +
+        '<span class="plan-week-count">' + finished + " / " + items.length + " 天</span></div><ul>";
+      items.forEach(function (p) {
+        html += '<li class="plan-item st-' + p.status + '">' +
+          '<span class="plan-dot"></span>' +
+          '<div class="plan-body">' +
+          '<div class="plan-title">第 ' + p.day + " 天 · " + esc(p.title) +
+          '<span class="plan-status">' + names[p.status] + "</span></div>" +
+          '<div class="plan-points">' + esc(p.points) + "</div>" +
+          '<div class="plan-out">产出：' + esc(p.output) + "　|　" + p.date + "</div>" +
+          "</div></li>";
+      });
+      html += "</ul></div>";
+    });
+    html += "</div>";
+    document.getElementById("planGrid").innerHTML = html;
+
+    var doneN = plan.filter(function (p) { return p.status === "done"; }).length;
+    var nextItem = plan.filter(function (p) { return p.status === "next" || p.status === "doing"; })[0];
+    set("planHint", "已完成 " + doneN + " / " + plan.length + " 天" +
+      (nextItem ? " · 下一步：第 " + nextItem.day + " 天 " + nextItem.title : ""));
+  }
+
   /* ---------------- 时间线 ---------------- */
   function renderTimeline() {
     document.getElementById("timelineList").innerHTML = timeline.map(function (t) {
@@ -259,6 +296,7 @@
   renderHero();
   renderStats();
   renderModules();
+  renderPlan();
   renderHeatmap();
   renderChart();
   renderTimeline();
