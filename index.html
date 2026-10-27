@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学习进程看板</title>
+  <meta name="description" content="用 Git 记录并可视化的编程学习进程看板" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span id="brandTitle">学习进程看板</span>
+      </div>
+      <nav class="nav">
+        <a href="#overview">总览</a>
+        <a href="#modules">模块进度</a>
+        <a href="#heatmap">打卡</a>
+        <a href="#timeline">时间线</a>
+        <a id="repoLink" href="#" target="_blank" rel="noopener">源码</a>
+      </nav>
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="切换主题">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 总览 -->
+    <section class="hero" id="overview">
+      <div class="hero-text">
+        <p class="eyebrow" id="heroEyebrow"></p>
+        <h1 id="heroTitle"></h1>
+        <p class="subtitle" id="heroSubtitle"></p>
+        <p class="motto" id="heroMotto"></p>
+        <div class="hero-meta" id="heroMeta"></div>
+      </div>
+      <div class="hero-ring">
+        <svg viewBox="0 0 140 140" class="ring">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4f7cff" />
+              <stop offset="100%" stop-color="#a55eea" />
+            </linearGradient>
+          </defs>
+          <circle cx="70" cy="70" r="56" class="ring-bg" />
+          <circle cx="70" cy="70" r="56" class="ring-fg" id="ringFg" />
+        </svg>
+        <div class="ring-center">
+          <strong id="ringPercent">0%</strong>
+          <span>总体完成度</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据卡片 -->
+    <section class="stats" id="stats"></section>
+
+    <!-- 模块进度 -->
+    <section class="card" id="modules">
+      <div class="card-head">
+        <h2>模块进度</h2>
+        <span class="card-hint" id="modulesHint"></span>
+      </div>
+      <div class="module-list" id="moduleList"></div>
+    </section>
+
+    <div class="grid-2">
+      <!-- 打卡热力图 -->
+      <section class="card" id="heatmap">
+        <div class="card-head">
+          <h2>学习打卡热力图</h2>
+          <span class="card-hint">最近 17 周</span>
+        </div>
+        <div class="heatmap-wrap" id="heatmapWrap"></div>
+        <div class="legend">
+          <span>少</span>
+          <i class="lv0"></i><i class="lv1"></i><i class="lv2"></i><i class="lv3"></i><i class="lv4"></i>
+          <span>多</span>
+        </div>
+      </section>
+
+      <!-- 近 14 天柱状图 -->
+      <section class="card">
+        <div class="card-head">
+          <h2>近 14 天学习时长</h2>
+          <span class="card-hint" id="chartHint"></span>
+        </div>
+        <div class="chart-wrap" id="chartWrap"></div>
+      </section>
+    </div>
+
+    <!-- 时间线 -->
+    <section class="card" id="timeline">
+      <div class="card-head">
+        <h2>学习时间线</h2>
+        <span class="card-hint" id="timelineHint"></span>
+      </div>
+      <ol class="timeline" id="timelineList"></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footerText"></p>
+    <p class="footer-sub">页面数据由 <code>data/progress.js</code> 驱动 · 每次提交都是一次成长记录</p>
+  </footer>
+
+  <script src="data/progress.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
