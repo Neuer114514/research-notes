@@ -174,6 +174,27 @@ window.LEARNING_DATA = {
   /* ---------------- 里程碑（时间线，新的在上） ---------------- */
   timeline: [
     {
+      date: "2026-11-09",
+      title: "LLM 笔记：Python 语法检索表（动手学深度学习配套）",
+      summary: "整理线性回归代码中的 Python 语法点：函数/生成器、切片、上下文管理器、f-string 等。",
+      tags: ["动手学深度学习", "Python"],
+      log: "notes/LLM笔记.md",
+    },
+    {
+      date: "2026-11-09",
+      title: "NumPy 笔记更新",
+      summary: "补充 11-04 版内容：数组操作、转置翻转、拼接与索引切片。",
+      tags: ["数据基础", "NumPy"],
+      log: "notes/Numpy笔记.md",
+    },
+    {
+      date: "2026-10-28",
+      title: "Pandas 笔记 + Google 高级检索笔记",
+      summary: "Pandas 必学 11 章学习路线；Google 高级语法（双引号/AND/Site:）。",
+      tags: ["数据基础", "检索能力"],
+      log: "notes/Pandas笔记.md",
+    },
+    {
       date: "2026-10-27",
       title: "NumPy 笔记整理（第 4 天 · 数据基础）",
       summary: "数组 reshape、转置、翻转、拼接、分割与索引切片，10/22—10/29 完成。",
