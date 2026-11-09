@@ -1,8 +1,6 @@
 ﻿# Python 笔记
 
-> 对应：第 1 周 第 2 天 · Python 基础
-> 完成时间：2026-10-14 ~ 2026-10-21（上周）
-> 来源：课题组任务/Python笔记.docx
+> 对应：第 1 周 · Python 基础 ｜ 2026-10-14 ~ 10-21
 
 ---
 
@@ -24,7 +22,7 @@ Python基础学习
 
 （4）len函数量取字符串长度
 
-（5）print（"字符" in 字符串）可检查在不在字符串里面（in 或not in）
+（5）print（“字符“ in 字符串）可检查在不在字符串里面（in 或not in）
 
 （6）if也可用于使用
 
@@ -34,15 +32,15 @@ Python基础学习
 
 修改字符串：
 
-1.  变量.upper()/lower() 分别为将变量大/小写 变量.strip()删除全部空格 变量.replace("旧"，"新") 变量.strip("，")拆分字符串
+1.  变量.upper()/lower() 分别为将变量大/小写 变量.strip()删除全部空格 变量.replace(“旧”，”新“) 变量.strip(“，“)拆分字符串
 
 字符串格式化：在字符串中使用占位符{}后，即可实现字符与数字相结合的输出方式，且不改变数字原有的数据类型，若有多个即可使用逗号隔开，示意如下：
 
-输入：![](img-python/media/image1.png) 输出：![](img-python/media/image2.png)
+输入：<img src="img-python/media/image1.png" style="width:1.90139in;height:0.56319in" /> 输出：<img src="img-python/media/image2.png" style="width:1.90764in;height:0.15556in" />
 
 2.  还可以直接赋值
 
-    输入：![](img-python/media/image3.png)输出：![](img-python/media/image4.png)
+    输入：<img src="img-python/media/image3.png" style="width:2.02778in;height:0.25625in" />输出：<img src="img-python/media/image4.png" style="width:2.51667in;height:0.22083in" />
 
 3.  反斜杠\\ \\插入非法字符，主要是某些函数名
 
@@ -50,16 +48,15 @@ Python基础学习
 
     布尔型（true或false）：
 
-```{=html}
 <!-- -->
-```
+
 1.  大部分都是真，除了空的集合列表元组字典和len为0与数字0是false
 
 （2）还可用于查看函数是否能正常执行（仅限于观测语法）
 
-![IMG_256](img-python/media/image5.png)
+<img src="img-python/media/image5.png" style="width:0.96806in;height:0.73333in" alt="IMG_256" />
 
-(3) 判断数据类型（isinstance(变量，类型)）
+3.  判断数据类型（isinstance(变量，类型)）
 
     运算：
 
@@ -69,30 +66,29 @@ Python基础学习
 
     \(2\) 成员运算符in
 
-    \(3\) 按位运算符& and；\| 或；\~ 非；\^亦或；\>\>右移；\<\<左移）（二进制）
+    \(3\) 按位运算符& and；\| 或；\~ 非；^亦或；&gt;&gt;右移；&lt;&lt;左移）（二进制）
 
     列表
 
-```{=html}
 <!-- -->
-```
-(1) 可使用函数来构造列表，示意如下：
 
-    ![](img-python/media/image6.png)
+1.  可使用函数来构造列表，示意如下：
+
+    <img src="img-python/media/image6.png" style="width:2.44097in;height:0.43819in" />
 
     输出与普通列表一致
 
-(2) 列表允许拥有重复值 且数据类型可混合
+2.  列表允许拥有重复值 且数据类型可混合
 
-(3) 列表也可更改其数值 ：
+3.  列表也可更改其数值 ：
 
-    输入：![](img-python/media/image7.png)输出：![](img-python/media/image8.png)
+    输入：<img src="img-python/media/image7.png" style="width:1.29444in;height:0.52153in" />输出：<img src="img-python/media/image8.png" style="width:1.15625in;height:0.25417in" />
 
-(4) 插入新元素：
+4.  插入新元素：
 
-    输入：![](img-python/media/image9.png)输出：![](img-python/media/image10.png)
+    输入：<img src="img-python/media/image9.png" style="width:2.51042in;height:0.59931in" />输出：<img src="img-python/media/image10.png" style="width:1.45764in;height:0.17153in" />
 
-(5) 列表扩展：extend（用法同上） 删除元素：remove 删除索引定位元素：pop
+5.  列表扩展：extend（用法同上） 删除元素：remove 删除索引定位元素：pop
 
     清空列表：clear
 
@@ -100,77 +96,73 @@ Python基础学习
 
     复制列表copy(或list2 = list（list1）)
 
-(6) 列表检索：
+6.  列表检索：
 
-    输入：![](img-python/media/image11.png)输出：![](img-python/media/image12.png)
+    输入：<img src="img-python/media/image11.png" style="width:1.5375in;height:0.66875in" />输出：<img src="img-python/media/image12.png" style="width:1.19167in;height:0.19583in" />
 
-    简写版本：![](img-python/media/image13.png)
+    简写版本：<img src="img-python/media/image13.png" style="width:2.63056in;height:0.54653in" />
 
     **元组：**
 
-```{=html}
 <!-- -->
-```
-(1) 有序不可更改（删除 增加或改变）但是允许重复值
 
-(2) 若元组只有一项 则在后面加上逗号
+1.  有序不可更改（删除 增加或改变）但是允许重复值
 
-(3) 若要更改元组 则先改为列表再改回元组
+2.  若元组只有一项 则在后面加上逗号
 
-(4) 元组之间相加（x+=y）
+3.  若要更改元组 则先改为列表再改回元组
 
-(5) 若两个元组的元素数量不同 可在某一元素前打上"\*" 则其他元素将作为列表分配给该元素
+4.  元组之间相加（x+=y）
 
-    输入：![](img-python/media/image14.png) 输出： ![](img-python/media/image15.png)
+5.  若两个元组的元素数量不同 可在某一元素前打上“\*” 则其他元素将作为列表分配给该元素
+
+    输入：<img src="img-python/media/image14.png" style="width:1.72083in;height:0.58889in" /> 输出： <img src="img-python/media/image15.png" style="width:1.1875in;height:0.40069in" />
 
     **集合**
 
     集合是无序 无索引 不可改变 且不允许有重复值的
 
-```{=html}
 <!-- -->
-```
-(1) 由于不存在索引 只能用for循环历遍集合项
 
-(2) 可以添加元素 使用add 两集合相加使用update 加在前面那个集合中（区别于union union是产生新的集合 如set3 = set1.union(set2)）
+1.  由于不存在索引 只能用for循环历遍集合项
 
-(3) 删去元素 使用remove或discard(多使用这个 不会报错) 使用pop将会随机删除
+2.  可以添加元素 使用add 两集合相加使用update 加在前面那个集合中（区别于union union是产生新的集合 如set3 = set1.union(set2)）
+
+3.  删去元素 使用remove或discard(多使用这个 不会报错) 使用pop将会随机删除
 
     **字典**
 
-```{=html}
 <!-- -->
-```
-(1) 有序 可变 不可重复的集合（我也不知道有无序）
 
-(2) 若有重复项则只显示最后一个
+1.  有序 可变 不可重复的集合（我也不知道有无序）
 
-(3) 用中括号来索引访问字典中的项目(或使用get)
+2.  若有重复项则只显示最后一个
 
-    输入：![](img-python/media/image16.png) 输出：![](img-python/media/image17.png)
+3.  用中括号来索引访问字典中的项目(或使用get)
 
-(4) 值的列表：values 项目的列表：items 用in检查是否在字典里
+    输入：<img src="img-python/media/image16.png" style="width:0.99653in;height:0.99653in" /> 输出：<img src="img-python/media/image17.png" style="width:0.92083in;height:0.38194in" />
+
+4.  值的列表：values 项目的列表：items 用in检查是否在字典里
 
     添加项目使用update 用pop删除元素 popitem删除最后一个元素
 
     Clear清空字典 复制字典.copy()或dict（）
 
-(5) 通过引用键名的方式来更改特定项目的值
+5.  通过引用键名的方式来更改特定项目的值
 
-    输入：![](img-python/media/image18.png) 输出：![](img-python/media/image19.png)
+    输入：<img src="img-python/media/image18.png" style="width:1.30694in;height:1.17222in" /> 输出：<img src="img-python/media/image19.png" style="width:3.35417in;height:0.22014in" />
 
-(6) for循环打印的是key的值 若要打印values则使用.values的后缀来实现
+6.  for循环打印的是key的值 若要打印values则使用.values的后缀来实现
 
     For(x,y)可将key与values一同打印出来
 
-    输入：![](img-python/media/image20.png)输出：![](img-python/media/image21.png)
+    输入：<img src="img-python/media/image20.png" style="width:1.23889in;height:1.02639in" />输出：<img src="img-python/media/image21.png" style="width:1.03194in;height:0.87014in" />
 
     条件语句：
 
-```{=html}
 <!-- -->
-```
-(1) if elif else
+
+1.  if elif else
 
     循环语句：
 
@@ -184,7 +176,7 @@ Python基础学习
 
     测试代码块的错误
 
-    输入：![](img-python/media/image22.png)输出：nonono
+    输入：<img src="img-python/media/image22.png" style="width:1.12083in;height:0.64028in" />输出：nonono
 
     Finally：无论是否引发错误都会执行
 
@@ -198,17 +190,17 @@ Python基础学习
 
     用key = value语法发送参数 使参数顺序无关紧要
 
-    ![](img-python/media/image23.png)
+    <img src="img-python/media/image23.png" style="width:2.32431in;height:0.6625in" />
 
     一颗星和两颗星的区别：
 
-    ![8c9bd1879cc11b956216c0bb2a94b76a](img-python/media/image24.jpeg)
+    <img src="img-python/media/image24.jpeg" style="width:4.64306in;height:1.54861in" alt="8c9bd1879cc11b956216c0bb2a94b76a" />
 
-    ![4df6feac36d9ade7e99020063cd59d0d](img-python/media/image25.jpeg)
+    <img src="img-python/media/image25.jpeg" style="width:4.67014in;height:1.67014in" alt="4df6feac36d9ade7e99020063cd59d0d" />
 
     不调用函数则其使用定义的默认值
 
-    输入：![](img-python/media/image26.png) 输出：![](img-python/media/image27.png)
+    输入：<img src="img-python/media/image26.png" style="width:1.69861in;height:0.68264in" /> 输出：<img src="img-python/media/image27.png" style="width:1.26944in;height:0.53611in" />
 
     列表也可以作参数返回值使用 ！！！与print的区别：return是返回的函数值 还可以保存变量供调用 但return后函数的程序不会再进行 print打印后就消失了
 
@@ -220,7 +212,7 @@ Python基础学习
 
     执行表达式并返回结果
 
-    ![](img-python/media/image28.png)
+    <img src="img-python/media/image28.png" style="width:1.85069in;height:0.44375in" />
 
     区别于def：只是一行小逻辑
 
@@ -230,7 +222,7 @@ Python基础学习
 
     Init()函数：类的内置函数 其中name可理解为self的属性 其本身不再是变量
 
-    ![](img-python/media/image29.png)
+    <img src="img-python/media/image29.png" style="width:1.81319in;height:1.35in" />
 
     对象方法：可以在类中创建一个方法：def myfunc(变量)：直接在变量后加.myfunc就可以运用该方法
 
@@ -244,9 +236,9 @@ Python基础学习
 
     \*\*\*迭代器
 
-    调用_iter_函数可进行初始化 比如赋值等操作
+    调用\_iter\_函数可进行初始化 比如赋值等操作
 
-    调用_next_函数在iter的基础上运行 每调用一次就运行一次
+    调用\_next\_函数在iter的基础上运行 每调用一次就运行一次
 
     若要停止迭代 则加入if/else语句来判断 并把raise StopIteration置于else下面
 
@@ -262,19 +254,19 @@ Python基础学习
 
     打开文件有四种不同的方法（模式）：
 
-    \"r\" - 读取 - 默认值。打开一个文件进行读取，如果文件不存在则报错
+    "r" - 读取 - 默认值。打开一个文件进行读取，如果文件不存在则报错
 
-    \"a\" - Append - 打开一个文件进行追加，如果文件不存在则创建该文件
+    "a" - Append - 打开一个文件进行追加，如果文件不存在则创建该文件
 
-    \"w\" - 写入 - 打开一个文件进行写入，如果文件不存在则创建该文件
+    "w" - 写入 - 打开一个文件进行写入，如果文件不存在则创建该文件
 
-    \"x\" - Create - 创建指定的文件，如果文件存在则返回错误
+    "x" - Create - 创建指定的文件，如果文件存在则返回错误
 
-    \"b\" - 二进制 - 二进制模式（例如图像）
+    "b" - 二进制 - 二进制模式（例如图像）
 
-    \"t\" - 文本 - 默认值。文本模式
+    "t" - 文本 - 默认值。文本模式
 
-f = open(\"demofile.txt\") 等同于 f = open(\"demofile.txt\", \"rt\")
+f = open("demofile.txt") 等同于 f = open("demofile.txt", "rt")
 
 文件读取print(f.read())
 
@@ -286,16 +278,16 @@ f = open(\"demofile.txt\") 等同于 f = open(\"demofile.txt\", \"rt\")
 
 import os
 
-os.remove(\"demofile2.txt\")
+os.remove("demofile2.txt")
 
 为避免出现错误，需要在尝试删除文件之前检查该文件是否存在：
 
 import os
 
-if os.path.exists(\"demofile.txt\"):
+if os.path.exists("demofile.txt"):
 
-os.remove(\"demofile.txt\")
+os.remove("demofile.txt")
 
 else:
 
-print(\"The file does not exist\")
+print("The file does not exist")
